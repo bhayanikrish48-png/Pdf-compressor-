@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+<title>PDF Compressor - Compress PDF Online Free</title>
+<meta name="description" content="Compress PDF files online for free. Reduce PDF file size quickly while keeping the best possible quality. Fast, secure, mobile-friendly PDF compressor." />
+<link rel="icon" href="favicon.svg" type="image/svg+xml" />
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">📄 PDF Compressor</div>
+    <button id="themeToggle" class="icon-btn" aria-label="Toggle dark mode">🌙</button>
+  </header>
+
+  <main class="container">
+    <section id="introSection" class="card intro">
+      <h1>Compress PDF Online</h1>
+      <p>Reduce your PDF file size quickly while keeping the best possible quality.</p>
+
+      <div id="dropZone" class="drop-zone">
+        <input type="file" id="fileInput" accept="application/pdf" hidden />
+        <button id="chooseBtn" class="btn btn-primary btn-large">📄 Choose PDF</button>
+        <p class="drop-hint">or drag &amp; drop a PDF here</p>
+        <p id="limitHint" class="limit-hint"></p>
+      </div>
+
+      <p id="errorMsg" class="error-msg" hidden></p>
+    </section>
+
+    <section id="fileSection" class="card" hidden>
+      <h2>Your File</h2>
+      <div class="file-row">
+        <span class="file-icon">📄</span>
+        <div class="file-info">
+          <div id="fileName" class="file-name"></div>
+          <div id="fileSize" class="file-size"></div>
+        </div>
+        <button id="removeFileBtn" class="icon-btn" aria-label="Remove file">✕</button>
+      </div>
+
+      <div id="progressWrap" class="progress-wrap" hidden>
+        <div class="progress-label"><span id="progressLabel">Uploading...</span><span id="progressPct">0%</span></div>
+        <div class="progress-bar"><div id="progressFill" class="progress-fill"></div></div>
+        <button id="cancelBtn" class="btn btn-outline btn-small">Cancel</button>
+      </div>
+
+      <div id="qualitySection">
+        <h3>Compression Level</h3>
+        <div class="quality-options">
+          <label class="quality-option">
+            <input type="radio" name="quality" value="high" />
+            <div class="quality-card">
+              <div class="quality-title">High Quality</div>
+              <div class="quality-desc">Smaller reduction · Best visual quality</div>
+            </div>
+          </label>
+          <label class="quality-option">
+            <input type="radio" name="quality" value="balanced" checked />
+            <div class="quality-card">
+              <div class="quality-title">Balanced</div>
+              <div class="quality-desc">Good quality and good compression</div>
+            </div>
+          </label>
+          <label class="quality-option">
+            <input type="radio" name="quality" value="maximum" />
+            <div class="quality-card">
+              <div class="quality-title">Maximum Compression</div>
+              <div class="quality-desc">Smallest possible file size</div>
+            </div>
+          </label>
+        </div>
+
+        <button id="compressBtn" class="btn btn-primary btn-large">Compress PDF</button>
+      </div>
+    </section>
+
+    <section id="resultSection" class="card" hidden>
+      <div class="result-check">✅</div>
+      <h2>Compression Complete!</h2>
+      <div class="result-stats">
+        <div class="stat">
+          <div class="stat-label">Original size</div>
+          <div id="statOriginal" class="stat-value">—</div>
+        </div>
+        <div class="stat">
+          <div class="stat-label">Compressed size</div>
+          <div id="statCompressed" class="stat-value">—</div>
+        </div>
+        <div class="stat stat-highlight">
+          <div class="stat-label">Saved</div>
+          <div id="statSaved" class="stat-value">—</div>
+        </div>
+      </div>
+
+      <a id="downloadBtn" class="btn btn-primary btn-large" href="#">⬇️ Download Compressed PDF</a>
+      <button id="anotherBtn" class="btn btn-outline btn-large">Compress Another PDF</button>
+    </section>
+
+    <section class="card privacy-card">
+      <div class="privacy-title">🔒 Your privacy matters</div>
+      <p>Your uploaded files are processed securely and automatically deleted after processing.</p>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>PDF Compressor &mdash; fast, private, mobile-friendly PDF compression.</p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

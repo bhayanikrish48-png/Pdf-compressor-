@@ -1,0 +1,9 @@
+services:
+  - type: web
+    name: pdf-compressor
+    env: docker
+    plan: free
+    healthCheckPath: /health
+    envVars:
+      - key: MAX_FILE_MB
+        value: "300"
